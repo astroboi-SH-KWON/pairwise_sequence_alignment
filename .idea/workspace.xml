@@ -7,6 +7,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -26,9 +40,37 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/input" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\pairwise_sequence_alignment\input" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.MultiProcessing">
+    <configuration name="MultiProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pairwise_sequence_alignment" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiProcessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pairwise_sequence_alignment" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MultiProcessing" />
         <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
@@ -80,6 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591925335528</updated>
       <workItem from="1591925340841" duration="2176000" />
+      <workItem from="1591928737067" duration="17130000" />
     </task>
     <servers />
   </component>
@@ -87,28 +131,46 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1813" height="294" key="GridCell.Tab.0.bottom" timestamp="1591928705831">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="973" height="769" key="GridCell.Tab.0.bottom" timestamp="1592185976987">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1813" height="294" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591928705831" />
-    <state width="1813" height="294" key="GridCell.Tab.0.center" timestamp="1591928705831">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1813" height="289" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
+    <state width="973" height="769" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592185976987" />
+    <state width="973" height="769" key="GridCell.Tab.0.center" timestamp="1592185976987">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1813" height="294" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591928705831" />
-    <state width="1813" height="294" key="GridCell.Tab.0.left" timestamp="1591928705831">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1813" height="289" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
+    <state width="973" height="769" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592185976987" />
+    <state width="973" height="769" key="GridCell.Tab.0.left" timestamp="1592185976987">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1813" height="294" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591928705831" />
-    <state width="1813" height="294" key="GridCell.Tab.0.right" timestamp="1591928705831">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state width="1813" height="289" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
+    <state width="973" height="769" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592185976987" />
+    <state width="973" height="769" key="GridCell.Tab.0.right" timestamp="1592185976987">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state width="1813" height="294" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591928705831" />
+    <state width="1813" height="289" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
+    <state width="973" height="769" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592185976987" />
     <state x="429" y="181" key="SettingsEditor" timestamp="1591927767044">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="429" y="181" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591927767044" />
+    <state x="840" y="79" width="895" height="1166" key="dock-window-1" timestamp="1592184586084">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="1925" y="151" width="895" height="1166" maximized="true" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179582258" />
+    <state x="840" y="79" width="895" height="1166" key="dock-window-1/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592184586084" />
+    <state x="339" y="0" width="895" height="994" key="dock-window-2" timestamp="1591940933984">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="339" y="0" width="895" height="994" key="dock-window-2/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1591940933984" />
+    <state x="-7" y="0" width="943" height="1087" key="dock-window-3" timestamp="1592180421961">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="-7" y="0" width="943" height="1087" key="dock-window-3/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592180421961" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1591928648795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1592185976982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1592179519932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

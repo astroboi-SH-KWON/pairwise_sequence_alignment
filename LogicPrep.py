@@ -1,10 +1,17 @@
 
 import Logic
 class LogicPreps:
-    def __init__(self):
-        self.tmp = ""
+    def __init__(self, ref_list):
+        self._cpu_cnt = 0
+        self.ref_list = ref_list
 
-    def get_pairwise2_needle_dict(self, sources):
+    def get_cnt_cpu(self):
+        return self._cpu_cnt
+
+    def set_cnt_cpu(self, cpu_cnt):
+        self._cpu_cnt = cpu_cnt
+
+    def get_pairwise2_needle_dict(self, sources, pairwise2_opt_arr):
         logic = Logic.Logics()
 
         result_dict = {}
@@ -22,7 +29,17 @@ class LogicPreps:
                     final_idx = tmp_arr[1]
                     ngs_read = tmp_arr[2]
                     ref_seq = tmp_arr[3]
-                    ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
+                    if len(pairwise2_opt_arr) > 1:
+                        ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read,
+                                                                                                           ref_seq,
+                                                                                                           pairwise2_opt_arr[
+                                                                                                               0],
+                                                                                                           pairwise2_opt_arr[
+                                                                                                               1],
+                                                                                                           pairwise2_opt_arr[
+                                                                                                               2])
+                    else:  # basic setting
+                        ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
                     tmp_list.append([idx, final_idx, ngs_read_needle, needle_result, ref_seq_needle])
 
             result_dict[sources[i]] = tmp_list
@@ -79,3 +96,36 @@ class LogicPreps:
                         re_idx += 1
                 result_dict[fnm_key].append([final_index, sub_dict, ins_dict, del_dict, re_idx])
         return result_dict
+
+    def get_pairwise2_needle_dict_by_res_seq(self, ngs_list):
+        logic = Logic.Logics()
+        result_dict = {}
+        print("get_pairwise2_needle_dict_by_res_seq starts ")
+        for val_arr in self.ref_list:
+            ref_seq = val_arr[0]
+            # ref_seq_len = len(ref_seq)
+            for ngs_read_arr in ngs_list:
+                ngs_read = ngs_read_arr[0]
+                ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
+                needle_cnt = needle_result.count('|')
+                ins_cnt = ref_seq_needle.count("-")
+                del_cnt = ngs_read_needle.count("-")
+                needle_tot = len(needle_result)
+                sub_cnt = needle_tot - (needle_cnt + del_cnt + ins_cnt)
+                if ref_seq in result_dict:
+                    result_dict[ref_seq].append([needle_cnt, ins_cnt, del_cnt, sub_cnt, ngs_read])
+                else:
+                    result_dict.update({ref_seq: [[needle_cnt, ins_cnt, del_cnt, sub_cnt, ngs_read]]})
+
+        return result_dict
+
+    def merge_multi_dict(self, pool_list):
+        merge_dict = {}
+        for split_dict in pool_list:
+            for ref_seq_key, val_list in split_dict.items():
+                if ref_seq_key in merge_dict:
+                    merge_dict[ref_seq_key].extend(val_list)
+                else:
+                    merge_dict.update({ref_seq_key: val_list})
+        return merge_dict
+

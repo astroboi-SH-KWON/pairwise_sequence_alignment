@@ -99,12 +99,49 @@ class Utils:
                             else:
                                 sheet.cell(row=row, column=5, value=str(i + 1))
                             sheet.cell(row=row, column=6, value=ins_dict[i])
-            if "result_" in fn_key:
-                workbook.save(filename=path + fn_key[fn_key.index("result_") + len("result_"):].replace(".txt",
-                                                                                                        "") + self.ext_xlsx)
-            else:
-                workbook.save(filename=path + fn_key[fn_key.index("input") + len("input") + 1:].replace(".txt",
-                                                                                                        "") + self.ext_xlsx)
+
+            workbook.save(filename=path + fn_key[fn_key.index("input") + len("input") + 1:].replace(".txt", "_") + self.ext_xlsx)
+
+    def read_tb_txt(self, path):
+        result_list = []
+        with open(path, "r") as f:
+            f.readline().replace("\n", "")
+            while True:
+                tmp_line = f.readline().replace("\n", "")
+                if tmp_line == "":
+                    break
+
+                tmp_arr = tmp_line.split("\t")
+                result_list.append(tmp_arr)
+
+        return result_list
+
+    def make_excel_mutil_processing(self, path, result_dict):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+
+        row = 1
+        sheet.cell(row=row, column=1, value="index")
+        sheet.cell(row=row, column=2, value='Ref Sequence')
+        sheet.cell(row=row, column=3, value='needle_cnt')
+        sheet.cell(row=row, column=4, value='ins')
+        sheet.cell(row=row, column=5, value='del')
+        sheet.cell(row=row, column=6, value='sub')
+        sheet.cell(row=row, column=7, value='NGS read')
+
+        for ref_seq_key, val_list in result_dict.items():
+            for val_arr in val_list:
+                row += 1
+                sheet.cell(row=row, column=1, value=str(row - 1))
+                sheet.cell(row=row, column=2, value=ref_seq_key)
+                sheet.cell(row=row, column=3, value=str(val_arr[0]))
+                sheet.cell(row=row, column=4, value=str(val_arr[1]))
+                sheet.cell(row=row, column=5, value=str(val_arr[2]))
+                sheet.cell(row=row, column=6, value=str(val_arr[3]))
+                sheet.cell(row=row, column=7, value=val_arr[4])
+
+        workbook.save(
+            filename=path + self.ext_xlsx)
 
 
 

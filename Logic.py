@@ -31,3 +31,16 @@ class Logics:
             return self.get_sub_idx_seq(idx_key + 1, sub_dict, [sub_seq_from + sub_seq_from_char, sub_seq_to + sub_seq_to_char])
         else:
             return idx_key - 1, sub_seq_from, sub_seq_to
+
+    def get_sorted_list_by_idx_ele(self, data_list, idx):
+        sorted_list = []
+        for tmp_list in sorted(data_list, key=lambda tmp_list: tmp_list[idx], reverse=True):
+            sorted_list.append(tmp_list)
+        return sorted_list
+
+    def sort_dict_top_n_by_idx_ele(self, input_dict, idx, top_n):
+        result_dict = {}
+        for ref_seq_key, val_list in input_dict.items():
+            soted_list = self.get_sorted_list_by_idx_ele(val_list, idx)
+            result_dict.update({ref_seq_key: soted_list[:top_n]})
+        return result_dict

@@ -64,12 +64,14 @@ class Utils:
                 ins_dict = val_arr[2]
                 del_dict = val_arr[3]
                 last_idx = val_arr[4]
+                read_no = val_arr[5]
                 end_idx = 0
                 for i in range(last_idx):
                     if i > end_idx:
                         if i in sub_dict:
                             row += 1
-                            sheet.cell(row=row, column=1, value=str(row - 1))
+                            # sheet.cell(row=row, column=1, value=str(row - 1))
+                            sheet.cell(row=row, column=1, value=str(read_no))
                             sheet.cell(row=row, column=2, value=final_index)
                             sheet.cell(row=row, column=3, value='Sub')
                             sheet.cell(row=row, column=4, value=str(i))
@@ -80,7 +82,8 @@ class Utils:
 
                         elif i in del_dict:
                             row += 1
-                            sheet.cell(row=row, column=1, value=str(row - 1))
+                            # sheet.cell(row=row, column=1, value=str(row - 1))
+                            sheet.cell(row=row, column=1, value=str(read_no))
                             sheet.cell(row=row, column=2, value=final_index)
                             sheet.cell(row=row, column=3, value='Del')
                             sheet.cell(row=row, column=4, value=str(i))
@@ -90,7 +93,8 @@ class Utils:
 
                         elif i in ins_dict:
                             row += 1
-                            sheet.cell(row=row, column=1, value=str(row - 1))
+                            # sheet.cell(row=row, column=1, value=str(row - 1))
+                            sheet.cell(row=row, column=1, value=str(read_no))
                             sheet.cell(row=row, column=2, value=final_index)
                             sheet.cell(row=row, column=3, value='Ins')
                             sheet.cell(row=row, column=4, value=str(i))
@@ -143,5 +147,14 @@ class Utils:
         workbook.save(
             filename=path + self.ext_xlsx)
 
+    def make_txt_needle_result(self, path, result_dict, path_split):
+        for fn_key, val_list in result_dict.items():
+            fn = fn_key[fn_key.index(path_split) + len(path_split) + 1:].replace(self.ext_txt, "")
+            with open(path + fn + self.ext_txt, "a") as f:
+                for val_arr in val_list:
+                    f.write("Read No. " + val_arr[0] + "\n")
+                    f.write(val_arr[1] + "\n")
+                    f.write(val_arr[2])
+                    f.write("\n")
 
 

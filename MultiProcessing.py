@@ -16,8 +16,8 @@ REF_SEQ = "input/Reference_test.txt"
 # REF_SEQ = "input/Reference.txt"
 
 PAIRWISE2_OPT = []
-MULTI_CNT = 10
-# MULTI_CNT = 36
+TOTAL_CPU = mp.cpu_count()
+MULTI_CNT = int(TOTAL_CPU*0.8)
 TOP_N = 5
 IDX = 0
 ############### end setting env ################
@@ -29,11 +29,11 @@ def multi_processing():
     ngs_read = util.read_tb_txt(WORK_DIR + NGS_read)  # 56k
     ref_seq = util.read_tb_txt(WORK_DIR + REF_SEQ)  # 1200
 
-    logic_prep = LogicPrep.LogicPreps(ref_seq)
+    logic_prep = LogicPrep.LogicPreps([ref_seq, IDX, TOP_N])
 
     splited_ngs_read = np.array_split(ngs_read, MULTI_CNT)
 
-    print("total cpu_count : " + str(mp.cpu_count()))
+    print("total cpu_count : " + str(TOTAL_CPU))
     print("will use : " + str(MULTI_CNT))
     pool = mp.Pool(processes=MULTI_CNT)
 

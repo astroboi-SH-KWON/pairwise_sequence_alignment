@@ -13,8 +13,9 @@ class Logics:
     def get_pairwise2_needle_result(self, asequence, bsequence, matrx=blosum62, gap_open_penalty=10, extension_penalty=0.5):
         alignments = pairwise2.align.globalds(asequence.upper(), bsequence.upper(), matrx, -gap_open_penalty,
                                               -extension_penalty)
-        align_arr = pairwise2.format_alignment(*alignments[0]).split("\n")
-        return align_arr[0], align_arr[1], align_arr[2]
+        alignments_result = pairwise2.format_alignment(*alignments[0])
+        align_arr = alignments_result.split("\n")
+        return align_arr[0], align_arr[1], align_arr[2], alignments_result
 
     def get_del_idx_seq(self, idx_key, del_dict, del_seq):
         if idx_key in del_dict:

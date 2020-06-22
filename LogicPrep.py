@@ -1,9 +1,11 @@
 
 import Logic
 class LogicPreps:
-    def __init__(self, ref_list):
+    def __init__(self, init_arr):
         self._cpu_cnt = 0
-        self.ref_list = ref_list
+        self.ref_list = init_arr[0]
+        self.idx = init_arr[1]
+        self.top_n = init_arr[2]
 
     def get_cnt_cpu(self):
         return self._cpu_cnt
@@ -15,8 +17,10 @@ class LogicPreps:
         logic = Logic.Logics()
 
         result_dict = {}
+        alignments_result_dict = {}
         for i in range(len(sources)):
             tmp_list = []
+            alignments_result_list = []
             with open(sources[i], "r") as f:
                 print(sources[i])
                 print(f.readline())
@@ -30,7 +34,7 @@ class LogicPreps:
                     ngs_read = tmp_arr[2]
                     ref_seq = tmp_arr[3]
                     if len(pairwise2_opt_arr) > 1:
-                        ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read,
+                        ngs_read_needle, needle_result, ref_seq_needle, alignments_result = logic.get_pairwise2_needle_result(ngs_read,
                                                                                                            ref_seq,
                                                                                                            pairwise2_opt_arr[
                                                                                                                0],
@@ -39,12 +43,14 @@ class LogicPreps:
                                                                                                            pairwise2_opt_arr[
                                                                                                                2])
                     else:  # basic setting
-                        ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
+                        ngs_read_needle, needle_result, ref_seq_needle, alignments_result = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
                     tmp_list.append([idx, final_idx, ngs_read_needle, needle_result, ref_seq_needle])
+                    alignments_result_list.append([idx, final_idx, alignments_result])
 
             result_dict[sources[i]] = tmp_list
+            alignments_result_dict[sources[i]] = alignments_result_list
 
-        return result_dict
+        return result_dict, alignments_result_dict
 
     """
     :param
@@ -72,6 +78,7 @@ class LogicPreps:
         for fnm_key, val_list in needle_dict.items():
             result_dict.update({fnm_key: []})
             for val_arr in val_list:
+                read_no = val_arr[0]
                 final_index = val_arr[1]
                 ngs_read = val_arr[2].upper()
                 ref_seq = val_arr[4].upper()
@@ -94,7 +101,7 @@ class LogicPreps:
                             sub_dict.update({re_idx: ref_seq[i] + "->" + ngs_read[i]})
                     else:
                         re_idx += 1
-                result_dict[fnm_key].append([final_index, sub_dict, ins_dict, del_dict, re_idx])
+                result_dict[fnm_key].append([final_index, sub_dict, ins_dict, del_dict, re_idx, read_no])
         return result_dict
 
     def get_pairwise2_needle_dict_by_res_seq(self, ngs_list):
@@ -103,7 +110,6 @@ class LogicPreps:
         print("get_pairwise2_needle_dict_by_res_seq starts ")
         for val_arr in self.ref_list:
             ref_seq = val_arr[0]
-            # ref_seq_len = len(ref_seq)
             for ngs_read_arr in ngs_list:
                 ngs_read = ngs_read_arr[0]
                 ngs_read_needle, needle_result, ref_seq_needle = logic.get_pairwise2_needle_result(ngs_read, ref_seq)
@@ -114,6 +120,9 @@ class LogicPreps:
                 sub_cnt = needle_tot - (needle_cnt + del_cnt + ins_cnt)
                 if ref_seq in result_dict:
                     result_dict[ref_seq].append([needle_cnt, ins_cnt, del_cnt, sub_cnt, ngs_read])
+                    # TODO val_arr 이 너무 많은 경우 TOP_N 갯수 만큼 필터링 추가
+                    sorted_list = logic.get_sorted_list_by_idx_ele(result_dict[ref_seq], self.idx)
+                    result_dict[ref_seq] = sorted_list[:self.top_n]
                 else:
                     result_dict.update({ref_seq: [[needle_cnt, ins_cnt, del_cnt, sub_cnt, ngs_read]]})
 

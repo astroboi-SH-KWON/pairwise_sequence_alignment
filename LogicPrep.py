@@ -88,14 +88,17 @@ class LogicPreps:
                 del_dict = {}
                 for i in range(len(ngs_read)):
                     if ngs_read[i] != ref_seq[i]:
+                        # del
                         if ngs_read[i] == "-":
                             re_idx += 1
                             del_dict.update({re_idx: ref_seq[i]})
+                        # ins
                         elif ref_seq[i] == "-":
                             if re_idx in ins_dict:
                                 ins_dict[re_idx] += ngs_read[i]
                             else:
                                 ins_dict.update({re_idx: ngs_read[i]})
+                        # sub
                         else:
                             re_idx += 1
                             sub_dict.update({re_idx: ref_seq[i] + "->" + ngs_read[i]})

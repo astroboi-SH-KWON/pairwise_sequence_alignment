@@ -52,6 +52,33 @@ class LogicPreps:
 
         return result_dict, alignments_result_dict
 
+    def get_pairwise2_needle_dict_(self, ngs_read_list):
+        print("get_pairwise2_needle_dict_ starts ")
+        logic = Logic.Logics()
+
+        result_dict = {}
+        alignments_result_dict = {}
+
+        fn_name = self.ref_list[0]
+        ref_seq = self.ref_list[1]
+        for np_arr in ngs_read_list:
+            ngs_read = np_arr[0]
+            ngs_id = np_arr[1]
+            ngs_read_needle, needle_result, ref_seq_needle, alignments_result = logic.get_pairwise2_needle_result(
+                ngs_read, ref_seq)
+            if fn_name in result_dict:
+                result_dict[fn_name].append([ngs_read_needle, needle_result, ref_seq_needle, ngs_id])
+            else:
+                result_dict.update({fn_name: [[ngs_read_needle, needle_result, ref_seq_needle, ngs_id]]})
+
+            if fn_name in alignments_result_dict:
+                alignments_result_dict[fn_name].append([alignments_result])
+            else:
+                alignments_result_dict.update({fn_name: [[alignments_result]]})
+
+
+        return result_dict, alignments_result_dict
+
     """
     :param
         needle_dict = {'D:/000_WORK/YuGooSang_KimHuiKwon/20200609/WORK_DIR/first_excel_output\\result_gDNA_0609.txt':
@@ -107,10 +134,10 @@ class LogicPreps:
                 result_dict[fnm_key].append([final_index, sub_dict, ins_dict, del_dict, re_idx, read_no])
         return result_dict
 
-    def get_pairwise2_needle_dict_by_res_seq(self, ngs_list):
+    def get_pairwise2_needle_dict_by_ref_seq(self, ngs_list):
         logic = Logic.Logics()
         result_dict = {}
-        print("get_pairwise2_needle_dict_by_res_seq starts ")
+        print("get_pairwise2_needle_dict_by_ref_seq starts ")
         for val_arr in self.ref_list:
             ref_seq = val_arr[0]
             for ngs_read_arr in ngs_list:
@@ -140,4 +167,52 @@ class LogicPreps:
                 else:
                     merge_dict.update({ref_seq_key: val_list})
         return merge_dict
+
+    def merge_multi_dict_(self, pool_list):
+        merge_result_dict = {}
+        merge_alignments_result_dict = {}
+        for pool_tp in pool_list:
+            result_dict = pool_tp[0]
+            alignments_result_dict = pool_tp[1]
+            for fn_key, val_list in result_dict.items():
+                if fn_key in merge_result_dict:
+                    merge_result_dict[fn_key].extend(val_list)
+                else:
+                    merge_result_dict.update({fn_key: val_list})
+
+        return merge_result_dict, merge_alignments_result_dict
+
+    def get_sub_ins_del_list_dict(self, needle_dict):
+        result_dict = {}
+        for fnm_key, val_list in needle_dict.items():
+            result_dict.update({fnm_key: []})
+            for val_arr in val_list:
+                ngs_read = val_arr[0].upper()
+                ref_seq = val_arr[2].upper()
+                ngs_id = val_arr[3]
+                re_idx = 0
+                sub_dict = {}
+                ins_dict = {}
+                del_dict = {}
+                for i in range(len(ngs_read)):
+                    if ngs_read[i] != ref_seq[i]:
+                        # del
+                        if ngs_read[i] == "-":
+                            re_idx += 1
+                            del_dict.update({re_idx: ref_seq[i]})
+                        # ins
+                        elif ref_seq[i] == "-":
+                            if re_idx in ins_dict:
+                                ins_dict[re_idx] += ngs_read[i]
+                            else:
+                                ins_dict.update({re_idx: ngs_read[i]})
+                        # sub
+                        else:
+                            re_idx += 1
+                            sub_dict.update({re_idx: ref_seq[i] + "->" + ngs_read[i]})
+                    else:
+                        re_idx += 1
+
+                result_dict[fnm_key].append([sub_dict, ins_dict, del_dict, re_idx, ngs_id])
+        return result_dict
 

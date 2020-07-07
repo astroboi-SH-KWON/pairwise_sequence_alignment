@@ -4,6 +4,7 @@ import os
 
 import Util
 import LogicPrep
+import Logic
 ############### start to set env ###############
 WORK_DIR = os.getcwd() + "/"
 
@@ -28,7 +29,7 @@ def pairwise2_main():
 
     util.make_excel(WORK_DIR + "output/pairwise2_result_" + str(clock()) + "_", result_dict)
 
-def test():
+def test2():
     ngs_read_needle = "TATATATCTTGTGGAAAGGACGAAACACCAGAAGCTGTACTTCAAAAAAGTT------------------------------------------------------------------------------------------AGTACATTTTTTTCATATCTGCACTCACTCTCTGCTGAAGCTGTACTTCAAAAAATGGATGACATGAAGAAGATAGCTTGGCGTACCGCGATCTCTACTCTACCCACTTGTACTTCAGCGGTCAGCTTACTCGACTTAA"
     needle_result = "||||||||||||||||||||||||||||| ||||||||||||||||||||||                                                                                          |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||"
     ref_seq_needle = "TATATATCTTGTGGAAAGGACGAAACACCGGAAGCTGTACTTCAAAAAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTGTCATCGATTTTTTGAAGTACATTTTTTTCATATCTGCACTCACTCTCTGCTGAAGCTGTACTTCAAAAAATGGATGACATGAAGAAGATAGCTTGGCGTACCGCGATCTCTACTCTA-CCACTTGTACTTCAGCGGTCAGCTTACTCGACTTAA"
@@ -39,6 +40,16 @@ def test():
     sub_cnt = needle_tot - (needle_cnt + del_cnt + ins_cnt)
     print(str(needle_cnt))
     print(str(sub_cnt))
+
+def test():
+    logic = Logic.Logics()
+    aseq = "ATTTAAGGGGCATCGTTTATTTTTTCCCCCCCCTTTGACTCATCTCGTCACTACAGACATGCATCGCATACTCTCCCTATGTTCCAGCTTCCTGGGTCTGCAGGTCCAGCCGAGTCGCCAAATAAGTGCCATCTACTCTACCACTTGTACTTCAGCGGT"
+    bseq = "TTTGACTCATCTCGTCACTACAGACATGCATCGCATACTCTCCCTATGTTCCAGCTTCCTGGGTCTGCAGGTCCAGCCGAGTCGCCAAATAAGTGCCATCTACTCTACC"
+    align_arr1, align_arr2, align_arr3 = logic.get_pairwise2_needle_result(aseq, bseq)
+    print(align_arr1)
+    print(align_arr2)
+    print(align_arr3)
+
 
 start_time = clock()
 print("start >>>>>>>>>>>>>>>>>>")

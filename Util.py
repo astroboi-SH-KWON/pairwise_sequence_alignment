@@ -160,7 +160,7 @@ class Utils:
                     f.write(val_arr[2])
                     f.write("\n")
 
-    def read_tb_txt_wo_frstline(self, path):
+    def read_tb_txt_wo_header(self, path):
         result_list = []
         with open(path, "r") as f:
             idx = 0
@@ -175,7 +175,7 @@ class Utils:
 
         return result_list
 
-    def make_excel_(self, path, result_dict):
+    def make_excel_simple(self, path, result_dict):
         logic = Logic.Logics()
 
         for fn_key, val_list in result_dict.items():

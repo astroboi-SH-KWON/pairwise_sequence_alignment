@@ -52,7 +52,7 @@ class LogicPreps:
 
         return result_dict, alignments_result_dict
 
-    def get_pairwise2_needle_dict_(self, ngs_read_list):
+    def get_pairwise2_needle_dict_simple(self, ngs_read_list):
         print("get_pairwise2_needle_dict_ starts ")
         logic = Logic.Logics()
 
@@ -168,7 +168,7 @@ class LogicPreps:
                     merge_dict.update({ref_seq_key: val_list})
         return merge_dict
 
-    def merge_multi_dict_(self, pool_list):
+    def merge_multi_dict_from_simple(self, pool_list):
         merge_result_dict = {}
         merge_alignments_result_dict = {}
         for pool_tp in pool_list:
@@ -182,7 +182,7 @@ class LogicPreps:
 
         return merge_result_dict, merge_alignments_result_dict
 
-    def get_sub_ins_del_list_dict(self, needle_dict):
+    def get_sub_ins_del_list_dict_from_simple(self, needle_dict):
         result_dict = {}
         for fnm_key, val_list in needle_dict.items():
             result_dict.update({fnm_key: []})

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="356dc57c-2f3f-4329-87eb-f979d7f26c18" name="Default Changelist" comment="" />
+    <list default="true" id="356dc57c-2f3f-4329-87eb-f979d7f26c18" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pairwise_sequence_alignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pairwise_sequence_alignment.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Multi_SY.py" beforeDir="false" afterPath="$PROJECT_DIR$/Multi_SY.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,10 +39,11 @@
   <component name="ProjectId" id="1dCNuJpp0XhLoMHNbIbSqDNIcZK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/input" />
@@ -146,18 +152,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -180,7 +174,16 @@
       <workItem from="1592957794966" duration="3005000" />
       <workItem from="1593748399555" duration="631000" />
       <workItem from="1594014250357" duration="10919000" />
-      <workItem from="1594074953525" duration="13486000" />
+      <workItem from="1594074953525" duration="14304000" />
+      <workItem from="1594161728296" duration="601000" />
+      <workItem from="1594166696725" duration="1900000" />
+      <workItem from="1594175834692" duration="934000" />
+      <workItem from="1594191053158" duration="248000" />
+      <workItem from="1594192035857" duration="432000" />
+      <workItem from="1594253443538" duration="600000" />
+      <workItem from="1594266079283" duration="600000" />
+      <workItem from="1594334900693" duration="4545000" />
+      <workItem from="1594788533821" duration="735000" />
     </task>
     <servers />
   </component>
@@ -188,36 +191,36 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2269" y="287" key="FileChooserDialogImpl" timestamp="1592882487316">
+    <state x="2269" y="287" key="FileChooserDialogImpl" timestamp="1594341594139">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
-    <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592882487316" />
-    <state width="973" height="996" key="GridCell.Tab.0.bottom" timestamp="1594089212082">
+    <state x="2269" y="287" key="FileChooserDialogImpl/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594341594139" />
+    <state width="973" height="322" key="GridCell.Tab.0.bottom" timestamp="1594111959678">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="880" height="519" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594087037892" />
-    <state width="973" height="996" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594089212082" />
+    <state width="973" height="322" key="GridCell.Tab.0.bottom/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594111959678" />
     <state width="1813" height="289" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
     <state width="973" height="769" key="GridCell.Tab.0.bottom/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592456679581" />
-    <state width="973" height="996" key="GridCell.Tab.0.center" timestamp="1594089212082">
+    <state width="973" height="322" key="GridCell.Tab.0.center" timestamp="1594111959678">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="880" height="519" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594087037891" />
-    <state width="973" height="996" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594089212082" />
+    <state width="973" height="322" key="GridCell.Tab.0.center/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594111959678" />
     <state width="1813" height="289" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
     <state width="973" height="769" key="GridCell.Tab.0.center/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592456679580" />
-    <state width="973" height="996" key="GridCell.Tab.0.left" timestamp="1594089212082">
+    <state width="973" height="322" key="GridCell.Tab.0.left" timestamp="1594111959678">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="880" height="519" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594087037891" />
-    <state width="973" height="996" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594089212082" />
+    <state width="973" height="322" key="GridCell.Tab.0.left/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594111959678" />
     <state width="1813" height="289" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
     <state width="973" height="769" key="GridCell.Tab.0.left/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592456679580" />
-    <state width="973" height="996" key="GridCell.Tab.0.right" timestamp="1594089212082">
+    <state width="973" height="322" key="GridCell.Tab.0.right" timestamp="1594111959678">
       <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state width="880" height="519" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594087037891" />
-    <state width="973" height="996" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594089212082" />
+    <state width="973" height="322" key="GridCell.Tab.0.right/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594111959678" />
     <state width="1813" height="289" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1592179519938" />
     <state width="973" height="769" key="GridCell.Tab.0.right/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592456679581" />
     <state width="973" height="699" key="GridCell.Tab.1.bottom" timestamp="1594029950419">
@@ -246,10 +249,11 @@
     <state x="33" y="181" key="SettingsEditor/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594080339266" />
     <state x="429" y="181" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@0.0.1858.1080" timestamp="1591927767044" />
     <state x="2000" y="-92" key="SettingsEditor/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592201078517" />
-    <state x="365" y="440" key="com.intellij.ide.util.TipDialog" timestamp="1592865645895">
-      <screen x="0" y="0" width="1856" height="1080" />
+    <state x="2182" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1594334903576">
+      <screen x="1982" y="-414" width="1018" height="1920" />
     </state>
     <state x="365" y="440" key="com.intellij.ide.util.TipDialog/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1592865645895" />
+    <state x="2182" y="368" key="com.intellij.ide.util.TipDialog/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594334903576" />
     <state x="2182" y="369" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1592463356349" />
     <state x="253" y="0" width="1035" height="1166" key="dock-window-1" timestamp="1594109122819">
       <screen x="0" y="0" width="1856" height="1080" />
@@ -273,11 +277,5 @@
     </state>
     <state x="1982" y="-57" width="1034" height="832" maximized="true" key="dock-window-4/0.0.1856.1080/1982.-414.1018.1920@0.0.1856.1080" timestamp="1594074975712" />
     <state x="808" y="110" width="1034" height="832" key="dock-window-4/0.0.1856.1080/1982.-414.1018.1920@1982.-414.1018.1920" timestamp="1594087753096" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$MultiProcessing.coverage" NAME="MultiProcessing Coverage Results" MODIFIED="1592439502556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$Main.coverage" NAME="Main Coverage Results" MODIFIED="1592789304957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1594016418253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pairwise_sequence_alignment$Multi_SY.coverage" NAME="Multi_SY Coverage Results" MODIFIED="1594089212078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

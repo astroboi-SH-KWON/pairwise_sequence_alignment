@@ -16,11 +16,8 @@ NGS_read_files = "input/NGS_READ/*.txt"
 NGS_read_DIR = "input/NGS_READ/"
 REF_SEQ = "input/REF_SEQ/200706_hNm2_Reference_Number.txt"
 
-PAIRWISE2_OPT = []
 TOTAL_CPU = mp.cpu_count()
 MULTI_CNT = int(TOTAL_CPU*0.8)
-TOP_N = 5
-IDX = 0
 ############### end setting env ################
 
 def multi_processing():
@@ -46,7 +43,7 @@ def multi_processing():
 
             util.make_excel_simple(WORK_DIR + "output/multi_p_result_" + ref_val[0], result_dict)
         except FileNotFoundError:
-            print(ref_val[0] + ".txt doesn't exist")
+            print(ref_val[0] + ".txt : FileNotFoundError")
             continue
 
 def multi_processing_test():
